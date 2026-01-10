@@ -1,0 +1,30 @@
+name: Test Workflow for Connector
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Test message'
+        required: false
+        default: 'Hello from connector test'
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print message
+        run: echo "${{ github.event.inputs.message || 'Default message' }}"
+
+      - name: Create test artifact
+        run: |
+          mkdir -p artifacts
+          echo "Test artifact content" > artifacts/test.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-artifact
+          path: artifacts/
+          retention-days: 1
