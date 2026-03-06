@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "9be14803-46d9-49c3-8739-d9e6e66b2301",
+		"name": "GitHub API - 1. Basic (no Auth)",
+		"description": "### What is GitHub?\n\n[GitHub](https://github.com/) is a popular code version control platform that over 73 million developers worldwide trust to organize their code bases.\n\nWhile you can interact with GitHub by clicking around their website, you can also interact with GitHub programmatically using their API.\n\nThis collection shows just a few of the many actions you can perform using the [GitHub REST API](https://docs.github.com/en/rest).\n\n### What is a repo?\n\nShort for \"repository\", a repo is simply a place where code is stored. You can think of a repo like a project folder.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34704825",
+		"_collection_link": "https://www.postman.com/postman/postman-api-101-with-auth/collection/z6829wf/github-api-1-basic-no-auth?action=share&source=collection_link&creator=34704825"
+	},
+	"item": [
+		{
+			"name": "search repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/search/repositories?q=llama&order=desc&per_page=1&sort=stars",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"search",
+						"repositories"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "llama"
+						},
+						{
+							"key": "order",
+							"value": "desc"
+						},
+						{
+							"key": "per_page",
+							"value": "1"
+						},
+						{
+							"key": "sort",
+							"value": "stars"
+						}
+					]
+				},
+				"description": "Searches repositories based on keywords `q`"
+			},
+			"response": [
+				{
+					"name": "search repos llama",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/search/repositories?q=llama&order=desc&per_page=1&sort=stars",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"search",
+								"repositories"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "llama"
+								},
+								{
+									"key": "order",
+									"value": "desc"
+								},
+								{
+									"key": "per_page",
+									"value": "1"
+								},
+								{
+									"key": "sort",
+									"value": "stars"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Tue, 06 Aug 2024 15:40:53 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept,Accept-Encoding, Accept, X-Requested-With"
+						},
+						{
+							"key": "X-GitHub-Media-Type",
+							"value": "github.v3; format=json"
+						},
+						{
+							"key": "Link",
+							"value": "<https://api.github.com/search/repositories?q=llama&order=desc&per_page=1&sort=stars&page=2>; rel=\"next\", <https://api.github.com/search/repositories?q=llama&order=desc&per_page=1&sort=stars&page=1000>; rel=\"last\""
+						},
+						{
+							"key": "x-github-api-version-selected",
+							"value": "2022-11-28"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000; includeSubdomains; preload"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "deny"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "origin-when-cross-origin, strict-origin-when-cross-origin"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'none'"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Server",
+							"value": "github.com"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "10"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "8"
+						},
+						{
+							"key": "X-RateLimit-Reset",
+							"value": "1722958897"
+						},
+						{
+							"key": "X-RateLimit-Resource",
+							"value": "search"
+						},
+						{
+							"key": "X-RateLimit-Used",
+							"value": "2"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1405"
+						},
+						{
+							"key": "X-GitHub-Request-Id",
+							"value": "E369:3AD58B:1519917:2870DDD:66B24405"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total_count\": 20206,\n    \"incomplete_results\": false,\n    \"items\": [\n        {\n            \"id\": 658928958,\n            \"node_id\": \"R_kgDOJ0Z1Pg\",\n            \"name\": \"ollama\",\n            \"full_name\": \"ollama/ollama\",\n            \"private\": false,\n            \"owner\": {\n                \"login\": \"ollama\",\n                \"id\": 151674099,\n                \"node_id\": \"O_kgDOCQpc8w\",\n                \"avatar_url\": \"https://avatars.githubusercontent.com/u/151674099?v=4\",\n                \"gravatar_id\": \"\",\n                \"url\": \"https://api.github.com/users/ollama\",\n                \"html_url\": \"https://github.com/ollama\",\n                \"followers_url\": \"https://api.github.com/users/ollama/followers\",\n                \"following_url\": \"https://api.github.com/users/ollama/following{/other_user}\",\n                \"gists_url\": \"https://api.github.com/users/ollama/gists{/gist_id}\",\n                \"starred_url\": \"https://api.github.com/users/ollama/starred{/owner}{/repo}\",\n                \"subscriptions_url\": \"https://api.github.com/users/ollama/subscriptions\",\n                \"organizations_url\": \"https://api.github.com/users/ollama/orgs\",\n                \"repos_url\": \"https://api.github.com/users/ollama/repos\",\n                \"events_url\": \"https://api.github.com/users/ollama/events{/privacy}\",\n                \"received_events_url\": \"https://api.github.com/users/ollama/received_events\",\n                \"type\": \"Organization\",\n                \"site_admin\": false\n            },\n            \"html_url\": \"https://github.com/ollama/ollama\",\n            \"description\": \"Get up and running with Llama 3.1, Mistral, Gemma 2, and other large language models.\",\n            \"fork\": false,\n            \"url\": \"https://api.github.com/repos/ollama/ollama\",\n            \"forks_url\": \"https://api.github.com/repos/ollama/ollama/forks\",\n            \"keys_url\": \"https://api.github.com/repos/ollama/ollama/keys{/key_id}\",\n            \"collaborators_url\": \"https://api.github.com/repos/ollama/ollama/collaborators{/collaborator}\",\n            \"teams_url\": \"https://api.github.com/repos/ollama/ollama/teams\",\n            \"hooks_url\": \"https://api.github.com/repos/ollama/ollama/hooks\",\n            \"issue_events_url\": \"https://api.github.com/repos/ollama/ollama/issues/events{/number}\",\n            \"events_url\": \"https://api.github.com/repos/ollama/ollama/events\",\n            \"assignees_url\": \"https://api.github.com/repos/ollama/ollama/assignees{/user}\",\n            \"branches_url\": \"https://api.github.com/repos/ollama/ollama/branches{/branch}\",\n            \"tags_url\": \"https://api.github.com/repos/ollama/ollama/tags\",\n            \"blobs_url\": \"https://api.github.com/repos/ollama/ollama/git/blobs{/sha}\",\n            \"git_tags_url\": \"https://api.github.com/repos/ollama/ollama/git/tags{/sha}\",\n            \"git_refs_url\": \"https://api.github.com/repos/ollama/ollama/git/refs{/sha}\",\n            \"trees_url\": \"https://api.github.com/repos/ollama/ollama/git/trees{/sha}\",\n            \"statuses_url\": \"https://api.github.com/repos/ollama/ollama/statuses/{sha}\",\n            \"languages_url\": \"https://api.github.com/repos/ollama/ollama/languages\",\n            \"stargazers_url\": \"https://api.github.com/repos/ollama/ollama/stargazers\",\n            \"contributors_url\": \"https://api.github.com/repos/ollama/ollama/contributors\",\n            \"subscribers_url\": \"https://api.github.com/repos/ollama/ollama/subscribers\",\n            \"subscription_url\": \"https://api.github.com/repos/ollama/ollama/subscription\",\n            \"commits_url\": \"https://api.github.com/repos/ollama/ollama/commits{/sha}\",\n            \"git_commits_url\": \"https://api.github.com/repos/ollama/ollama/git/commits{/sha}\",\n            \"comments_url\": \"https://api.github.com/repos/ollama/ollama/comments{/number}\",\n            \"issue_comment_url\": \"https://api.github.com/repos/ollama/ollama/issues/comments{/number}\",\n            \"contents_url\": \"https://api.github.com/repos/ollama/ollama/contents/{+path}\",\n            \"compare_url\": \"https://api.github.com/repos/ollama/ollama/compare/{base}...{head}\",\n            \"merges_url\": \"https://api.github.com/repos/ollama/ollama/merges\",\n            \"archive_url\": \"https://api.github.com/repos/ollama/ollama/{archive_format}{/ref}\",\n            \"downloads_url\": \"https://api.github.com/repos/ollama/ollama/downloads\",\n            \"issues_url\": \"https://api.github.com/repos/ollama/ollama/issues{/number}\",\n            \"pulls_url\": \"https://api.github.com/repos/ollama/ollama/pulls{/number}\",\n            \"milestones_url\": \"https://api.github.com/repos/ollama/ollama/milestones{/number}\",\n            \"notifications_url\": \"https://api.github.com/repos/ollama/ollama/notifications{?since,all,participating}\",\n            \"labels_url\": \"https://api.github.com/repos/ollama/ollama/labels{/name}\",\n            \"releases_url\": \"https://api.github.com/repos/ollama/ollama/releases{/id}\",\n            \"deployments_url\": \"https://api.github.com/repos/ollama/ollama/deployments\",\n            \"created_at\": \"2023-06-26T19:39:32Z\",\n            \"updated_at\": \"2024-08-06T15:32:03Z\",\n            \"pushed_at\": \"2024-08-06T14:12:50Z\",\n            \"git_url\": \"git://github.com/ollama/ollama.git\",\n            \"ssh_url\": \"git@github.com:ollama/ollama.git\",\n            \"clone_url\": \"https://github.com/ollama/ollama.git\",\n            \"svn_url\": \"https://github.com/ollama/ollama\",\n            \"homepage\": \"https://ollama.com\",\n            \"size\": 23561,\n            \"stargazers_count\": 83721,\n            \"watchers_count\": 83721,\n            \"language\": \"Go\",\n            \"has_issues\": true,\n            \"has_projects\": false,\n            \"has_downloads\": true,\n            \"has_wiki\": false,\n            \"has_pages\": false,\n            \"has_discussions\": false,\n            \"forks_count\": 6417,\n            \"mirror_url\": null,\n            \"archived\": false,\n            \"disabled\": false,\n            \"open_issues_count\": 1280,\n            \"license\": {\n                \"key\": \"mit\",\n                \"name\": \"MIT License\",\n                \"spdx_id\": \"MIT\",\n                \"url\": \"https://api.github.com/licenses/mit\",\n                \"node_id\": \"MDc6TGljZW5zZTEz\"\n            },\n            \"allow_forking\": true,\n            \"is_template\": false,\n            \"web_commit_signoff_required\": false,\n            \"topics\": [\n                \"gemma\",\n                \"gemma2\",\n                \"go\",\n                \"golang\",\n                \"llama\",\n                \"llama2\",\n                \"llama3\",\n                \"llava\",\n                \"llm\",\n                \"llms\",\n                \"mistral\",\n                \"ollama\",\n                \"phi3\"\n            ],\n            \"visibility\": \"public\",\n            \"forks\": 6417,\n            \"open_issues\": 1280,\n            \"watchers\": 83721,\n            \"default_branch\": \"main\",\n            \"score\": 1\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "user info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/:owner",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":owner"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "octocat",
+							"description": "username or organization name you would like information about"
+						}
+					]
+				},
+				"description": "Get information about the given user. \n\nMore detailed information is given if the requested user is the currently authorized user."
+			},
+			"response": []
+		},
+		{
+			"name": "user repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/:owner/repos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						":owner",
+						"repos"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "octocat",
+							"description": "username or organization name whose repos you would like to see"
+						}
+					]
+				},
+				"description": "Lists all public repos for a given user"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.github.com",
+			"type": "string"
+		}
+	]
+}
